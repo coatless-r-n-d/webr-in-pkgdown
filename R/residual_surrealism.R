@@ -14,7 +14,7 @@
 #'   \item{V7}{Sixth predictor variable}
 #' }
 #' 
-#' @examplesWebR
+#' @examplesWebR embed height=450
 #' # Load the data
 #' data(residual_surrealism)
 #' 
