@@ -28,7 +28,7 @@ A dataset that yields a model with surreal residuals.
 }
 \section{WebR}{
 \ifelse{html}{\out{
-<iframe src="https://webr.r-wasm.org/latest/#code=W3sibmFtZSI6ImV4YW1wbGUuUiIsInBhdGgiOiIvZXhhbXBsZS5SIiwidGV4dCI6IiMgTG9hZCB0aGUgZGF0YVxuZGF0YShyZXNpZHVhbF9zdXJyZWFsaXNtKVxuXG4jIEZpdCBhIG1vZGVsXG5tb2RlbCA9IGxtKFYxIH4gLiwgcmVzaWR1YWxfc3VycmVhbGlzbSlcblxuIyBHcmFwaCB0aGUgcmVzaWR1YWxzIHZzLiBmaXR0ZWQgdmFsdWVzXG5wbG90KGZpdHRlZChtb2RlbCkscmVzaWQobW9kZWwpKVxuXG4jIEFkZCBhIGxpbmUgYXQgeSA9IDBcbmFibGluZSgwLCAwLCBjb2wgPSBcInJlZFwiKSJ9XQ\%3D\%3D&ju" width="100%" height="450px" style="border: 1px solid #ddd; border-radius: 4px; margin-top: 10px;" title="webR REPL"></iframe>
+<iframe src="https://webr.r-wasm.org/latest/#code=W3sibmFtZSI6ImV4YW1wbGUuUiIsInBhdGgiOiIvZXhhbXBsZS5SIiwidGV4dCI6IiMgTG9hZCB0aGUgZGF0YVxuZGF0YShyZXNpZHVhbF9zdXJyZWFsaXNtKVxuXG4jIEZpdCBhIG1vZGVsXG5tb2RlbCA9IGxtKFYxIH4gLiwgcmVzaWR1YWxfc3VycmVhbGlzbSlcblxuIyBHcmFwaCB0aGUgcmVzaWR1YWxzIHZzLiBmaXR0ZWQgdmFsdWVzXG5wbG90KGZpdHRlZChtb2RlbCkscmVzaWQobW9kZWwpKVxuXG4jIEFkZCBhIGxpbmUgYXQgeSA9IDBcbmFibGluZSgwLCAwLCBjb2wgPSBcInJlZFwiKSJ9XQ\%3D\%3D&ju" width="100\%" height="450px" style="border: 1px solid #ddd; border-radius: 4px; margin-top: 10px;" title="webR REPL"></iframe>
 }}{\ifelse{latex}{\url{https://webr.r-wasm.org/latest/#code=W3sibmFtZSI6ImV4YW1wbGUuUiIsInBhdGgiOiIvZXhhbXBsZS5SIiwidGV4dCI6IiMgTG9hZCB0aGUgZGF0YVxuZGF0YShyZXNpZHVhbF9zdXJyZWFsaXNtKVxuXG4jIEZpdCBhIG1vZGVsXG5tb2RlbCA9IGxtKFYxIH4gLiwgcmVzaWR1YWxfc3VycmVhbGlzbSlcblxuIyBHcmFwaCB0aGUgcmVzaWR1YWxzIHZzLiBmaXR0ZWQgdmFsdWVzXG5wbG90KGZpdHRlZChtb2RlbCkscmVzaWQobW9kZWwpKVxuXG4jIEFkZCBhIGxpbmUgYXQgeSA9IDBcbmFibGluZSgwLCAwLCBjb2wgPSBcInJlZFwiKSJ9XQ\%3D\%3D&ju}}{Interactive webR content not available for this output format.}}
 }
 
