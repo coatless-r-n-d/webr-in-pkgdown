@@ -13,8 +13,8 @@ R.
 }
 \section{WebR}{
 \ifelse{html}{\out{
-<p><a href="https://webr.r-wasm.org/latest/#code=W3sibmFtZSI6ImV4YW1wbGUuUiIsInBhdGgiOiIvZXhhbXBsZS5SIiwidGV4dCI6IiMgQ2hlY2sgdG8gc2VlIGlmIFdBU00gaXMgYWN0aXZlXG5pbl93ZWJyKCkifV0\%3D&ju" target="_blank" style="background-color: #007bff; color: white; padding: 8px 16px; text-decoration: none; border-radius: 4px; font-size: 14px;">🌐 View in webR REPL</a></p>
-}}{\ifelse{latex}{\url{https://webr.r-wasm.org/latest/#code=W3sibmFtZSI6ImV4YW1wbGUuUiIsInBhdGgiOiIvZXhhbXBsZS5SIiwidGV4dCI6IiMgQ2hlY2sgdG8gc2VlIGlmIFdBU00gaXMgYWN0aXZlXG5pbl93ZWJyKCkifV0\%3D&ju}}{Interactive webR content not available for this output format.}}
+<p><a href="https://webr.r-wasm.org/latest/#code=W3sibmFtZSI6ImV4YW1wbGUuUiIsInBhdGgiOiIvZXhhbXBsZS5SIiwidGV4dCI6IiMgSW5zdGFsbCBhbmQgbG9hZCB3ZWJSIFBhY2thZ2Vcbmluc3RhbGwucGFja2FnZXMoXCJwa2dkb3dud2VicmRlbW9cIiwgcmVwb3MgPSBcImh0dHBzOi8vcmQudGhlY29hdGxlc3Nwcm9mZXNzb3IuY29tL3dlYnItaW4tcGtnZG93blwiKVxubGlicmFyeShcInBrZ2Rvd253ZWJyZGVtb1wiKVxuXG4jIEV4YW1wbGUgY29kZTpcbiMgQ2hlY2sgdG8gc2VlIGlmIFdBU00gaXMgYWN0aXZlXG5pbl93ZWJyKCkifV0\%3D&ju" target="_blank" style="background-color: #007bff; color: white; padding: 8px 16px; text-decoration: none; border-radius: 4px; font-size: 14px;">🌐 View in webR REPL</a></p>
+}}{\ifelse{latex}{\url{https://webr.r-wasm.org/latest/#code=W3sibmFtZSI6ImV4YW1wbGUuUiIsInBhdGgiOiIvZXhhbXBsZS5SIiwidGV4dCI6IiMgSW5zdGFsbCBhbmQgbG9hZCB3ZWJSIFBhY2thZ2Vcbmluc3RhbGwucGFja2FnZXMoXCJwa2dkb3dud2VicmRlbW9cIiwgcmVwb3MgPSBcImh0dHBzOi8vcmQudGhlY29hdGxlc3Nwcm9mZXNzb3IuY29tL3dlYnItaW4tcGtnZG93blwiKVxubGlicmFyeShcInBrZ2Rvd253ZWJyZGVtb1wiKVxuXG4jIEV4YW1wbGUgY29kZTpcbiMgQ2hlY2sgdG8gc2VlIGlmIFdBU00gaXMgYWN0aXZlXG5pbl93ZWJyKCkifV0\%3D&ju}}{Interactive webR content not available for this output format.}}
 }
 
 \examples{
