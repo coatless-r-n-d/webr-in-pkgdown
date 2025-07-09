@@ -97,7 +97,7 @@ Enable GitHub Pages for your repository:
 3.  Set **Source** to “GitHub Actions”
 4.  Enable **Enforce HTTPS** in the “Custom Domain” settings
 
-![](https://github.com/user-attachments/assets/6d2cf5e2-4a5c-4447-ac35-8ab0a6a153e9)
+![](man/figures/github-repository-settings-for-github-pages.png)
 
 ### Step 3: Update Package Documentation
 
@@ -130,7 +130,10 @@ your `DESCRIPTION` file:
 #### WebR Repository Configuration
 
 Configure where `rocleteer` should find your webR-compatible package
-binaries. You have two options:
+binaries by adding into your `DESCRIPTION` file the
+`Config/rocleteer/webr-repo` field.
+
+You have two options for specifying the webR repository:
 
 **Option 1: GitHub Pages (recommended for this workflow)**
 
