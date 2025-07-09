@@ -29,7 +29,7 @@ This repository demonstrates how to create interactive R documentation by
 combining [pkgdown](https://pkgdown.r-lib.org/) with 
 [webR](https://docs.r-wasm.org/webr/latest/) (WebAssembly Distribution of R). 
 The approach enables users to run R code directly in their browser within the 
-documentation website, eliminating the need for local R installation while
+documentation website, removing the need for local R installation while
 exploring package functionality.
 
 ## Live Demo
@@ -57,36 +57,26 @@ Then, load the package:
 library(pkgdownwebrdemo)
 ```
 
-## Technical Implementation
+## Implementation Overview
 
-This repository demonstrates the integration of several technologies to create 
-interactive R documentation within a pkgdown website. The implementation combines
-standard R package development with WebAssembly compilation and automated
-deployment.
+The integration combines standard R package development with WebAssembly
+compilation and automated deployment. WebR is a distribution of R compiled 
+for web browsers using WebAssembly technology. Unlike standard R packages, 
+webR packages require compilation into WebAssembly binaries using the 
+[`rwasm`](https://github.com/r-wasm/rwasm) package.
 
-### WebR and WebAssembly Compilation
-
-WebR is a distribution of R compiled for web browsers using WebAssembly technology. Unlike standard R packages, webR packages require compilation into WebAssembly binaries using the [`rwasm`](https://github.com/r-wasm/rwasm) package. While CRAN packages typically have pre-built webR binaries available, developmental packages require custom compilation.
-
-This repository uses the [`r-wasm/actions`](https://github.com/r-wasm/actions) GitHub Action to automate the WebAssembly compilation process, ensuring that the package is available for use in webR environments.
-
-
-### GitHub Actions Workflow Configuration
-
-The workflow file `.github/workflows/rwasm-binary-and-pkgdown-site.yml` orchestrates:
-
-- **Documentation Generation**: Building the pkgdown site with interactive examples
-- **WebR Binary Creation**: Compiling package binaries for browser use  
-- **Package Repository Setup**: Creating a webR-compatible package repository structure
-- **Site Deployment**: Publishing the combined documentation and binaries to GitHub Pages
-
-The workflow ensures that both the documentation and the necessary webR binaries
-are available at the same domain, enabling seamless integration of interactive
-examples within the documentation.
+This repository uses the [`r-wasm/actions`](https://github.com/r-wasm/actions)
+GitHub Action to automate the WebAssembly compilation process. The workflow file
+`.github/workflows/rwasm-binary-and-pkgdown-site.yml` handles documentation 
+generation, webR binary creation, package repository setup, and deployment to
+GitHub Pages, ensuring that both documentation and webR binaries are available
+at the same domain.
 
 ## Implementation Guide
 
-To implement interactive webR documentation in your own R package, follow these steps:
+To implement interactive webR documentation in your own R package, follow
+the next steps closely. This guide assumes you have a understanding of
+R package development and familiarity with GitHub Actions. 
 
 ### Step 1: Add the GitHub Actions Workflow
 
@@ -109,6 +99,8 @@ Enable GitHub Pages for your repository:
 3. Set **Source** to "GitHub Actions" 
 4. Enable **Enforce HTTPS** in the "Custom Domain" settings
 
+![](https://github.com/user-attachments/assets/6d2cf5e2-4a5c-4447-ac35-8ab0a6a153e9)
+
 ### Step 3: Update Package Documentation
 
 To enable interactive examples in your package documentation, use the 
@@ -124,35 +116,52 @@ executed in a webR environment.
 >
 > ```r
 > # install.packages("remotes")
-> remotes::install_github("coatless-rpkg/rocleteer#1")
+> remotes::install_github("coatless-rpkg/rocleteer")
 > ```
 
-To use the `@examplesWebR` tag in your package, add the required dependencies:
-
-In your `DESCRIPTION` file:
+To use the `@examplesWebR` tag in your package, include the following in
+your `DESCRIPTION` file:
 
 ```
 Suggests:
     rocleteer
 Remotes: coatless-rpkg/rocleteer
 
-Roxygen: list(..., packages = c("rocleteer"))
+Roxygen: list(packages = c("rocleteer"))
 ```
+
+#### WebR Repository Configuration
+
+Configure where `rocleteer` should find your webR-compatible package binaries. 
+You have two options:
+
+**Option 1: GitHub Pages (recommended for this workflow)**
+
+```
+Config/rocleteer/webr-repo: https://username.github.io/repository
+```
+
+**Option 2: R-Universe**
+
+```
+Config/rocleteer/webr-repo: https://username.r-universe.dev
+```
+
+If not specified, `rocleteer` attempts automatic detection based on the `URL` 
+field in your `DESCRIPTION` file, with a warning if no compatible repository is found.
+
 
 #### Update Documentation
 
-> [!NOTE]
->
-> Still a WIP.
-
 Prepare your package for webR integration:
 
-- **Add interactive examples**: Use `@examplesWebR` tags in your roxygen 
-  documentation instead of or alongside standard `@examples`
-- **Update DESCRIPTION file**: Ensure the `URL` field lists your GitHub Pages
-  site as the first URL (e.g., `https://username.github.io/repository`)
 - **Test locally**: Verify that your standard pkgdown site builds correctly
   before adding webR functionality
+- **Add interactive examples**: Use `@examplesWebR` tags in your roxygen 
+  documentation instead of or alongside standard `@examples`
+- **Update DESCRIPTION file**: Ensure the `Config/rocleteer/webr-repo` field
+  or `URL` field lists your GitHub Pages site (e.g., `https://username.github.io/repository`)
+  or R-Universe account (e.g., `https://username.r-universe.dev`)
 
 ### Step 4: Deploy and Verify
 
@@ -173,14 +182,17 @@ This implementation builds upon several key technologies and projects:
 
 ### Extensions and Tools
 
-- [`{quarto-webr}`](https://github.com/coatless/quarto-webr/) - Quarto extension that provides webR integration for Quarto documents
-- [`{altdoc}`](https://altdoc.etiennebacher.com/) - Alternative documentation generation tools for R packages
-- [`{quarto-panelize}`](https://github.com/coatless-quarto/panelize) - Quarto extension for creating tabset panels
 - [`{rwasm}`](https://github.com/r-wasm/rwasm) - Package for compiling R packages to WebAssembly
+- [`{quarto-live}`](https://github.com/r-wasm/quarto-live) - Posit's official Quarto extension for live R and Python code execution in web browsers
+- [`{altdoc}`](https://altdoc.etiennebacher.com/) - Alternative documentation generation tools for R packages
+- [`{quarto-webr}`](https://github.com/coatless/quarto-webr/) - Community
+  Quarto extension that provides webR integration for Quarto documents
+- [`{quarto-panelize}`](https://github.com/coatless-quarto/panelize) - Quarto 
+  extension for creating tabset panels with rendered and interactive content.
 
 ### Related Demonstrations
 
-- [`quarto-webr-in-altdocs`](https://github.com/coatless-r-n-d/quarto-webr-in-altdocs) - Integration of webR with altdoc-generated documentation using Quarto extensions
+- [`quarto-webr-in-altdocs`](https://github.com/coatless-r-n-d/quarto-webr-in-altdocs) - Integration of webR with altdoc-generated documentation using community Quarto extensions
 
 ## Contributing
 
